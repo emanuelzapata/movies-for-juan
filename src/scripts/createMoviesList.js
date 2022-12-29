@@ -1,5 +1,5 @@
 const fileSystem = require('fs');
-const movies = require('../assets/movieList.json');
+const movies = require('../assets/recommendations.json');
 const axios = require('axios');
 
 function createOutputFile(movieOutputList){
