@@ -1,0 +1,7 @@
+.movie-list-card-container:hover{
+    background-color: blue;
+}
+.movie-poster{
+    height: 214px;
+    width: 150px;
+}

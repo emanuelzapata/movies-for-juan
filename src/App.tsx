@@ -5,16 +5,22 @@ import axios, { AxiosResponse } from 'axios';
 import MovieContainer from './components/MovieContainer/MovieContainer';
 import recommendations from './assets/recommendations.json';
 import movies from './assets/movies.json';
+import MovieListCard from './components/MovieListCard/MovieListCard';
 
 export default function App() {
   return (
     <div className="">
-      {movies.map(movie=>(
+      {/* {movies.map(movie=>(
         <li>
-          {movie.Title}
+          <img src={movie.Poster} />
         </li>
+      ))} */}
+      {/* <MovieContainer /> */}
+
+      {movies.map(movie =>(
+        <MovieListCard movie={movie} />
       ))}
-      <MovieContainer />
+
     </div>
   );
 }
