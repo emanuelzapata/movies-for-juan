@@ -8,6 +8,9 @@ import movies from './assets/movies.json';
 import MovieListCard from './components/MovieListCard/MovieListCard';
 
 export default function App() {
+  let parent = () => {
+    console.log("on parent ");
+  }
   return (
     <div className="">
       {/* {movies.map(movie=>(
@@ -18,7 +21,7 @@ export default function App() {
       {/* <MovieContainer /> */}
 
       {movies.map(movie =>(
-        <MovieListCard movie={movie} />
+        <MovieListCard onClick={parent} movie={movie} />
       ))}
 
     </div>
