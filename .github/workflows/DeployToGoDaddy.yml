@@ -31,11 +31,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
-
-    - name: Connect to GoDaddy Server
-      run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
     
-    - name: List directory
-      run: ls
+    - name: Connect to GoDaddy Server
+      run: ftp ftp.emanuelzapata.com
+
+    # - name: Connect to GoDaddy Server
+    #   run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
     # - name: Upload to GoDaddy
     #   run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
