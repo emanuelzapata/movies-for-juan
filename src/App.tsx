@@ -8,22 +8,17 @@ import movies from './assets/movies.json';
 import MovieListCard from './components/MovieListCard/MovieListCard';
 
 export default function App() {
-  let parent = () => {
-    console.log("on parent ");
+  function practice(movie:any){
+    console.log(movie);
   }
+
   return (
     <div className="container">
-      {/* {movies.map(movie=>(
-        <li>
-          <img src={movie.Poster} />
-        </li>
-      ))} */}
-      {/* <MovieContainer /> */}
-
       {movies.map(movie =>(
-        <MovieListCard onClick={parent} movie={movie} />
+        <div onClick={()=>practice(movie)}>
+          <MovieListCard movie={movie} />
+        </div>
       ))}
-
     </div>
   );
 }
