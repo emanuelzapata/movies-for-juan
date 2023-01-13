@@ -12,7 +12,7 @@ export default function App() {
     console.log("on parent ");
   }
   return (
-    <div className="">
+    <div className="container">
       {/* {movies.map(movie=>(
         <li>
           <img src={movie.Poster} />

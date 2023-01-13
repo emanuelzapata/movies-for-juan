@@ -7,3 +7,10 @@
     height: 214px;
     width: 150px;
 }
+.movie-list-card-container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.imdb-rating-text{
+    text-align: center;
+}
