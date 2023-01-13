@@ -5,6 +5,9 @@ name: Manual workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
@@ -30,7 +33,7 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
 
     - name: Connect to GoDaddy Server
-      run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com/
+      run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com/ | ls
     
     - name: List directory
       run: ls
