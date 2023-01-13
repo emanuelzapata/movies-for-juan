@@ -29,5 +29,7 @@ jobs:
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
 
-    - name: Upload to GoDaddy
-      run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
+    - name: Connect to GoDaddy Server
+      run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com/
+    # - name: Upload to GoDaddy
+    #   run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
