@@ -31,5 +31,8 @@ jobs:
 
     - name: Connect to GoDaddy Server
       run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com/
+    
+    - name: List directory
+      run: ls
     # - name: Upload to GoDaddy
     #   run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
