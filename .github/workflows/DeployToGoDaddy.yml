@@ -33,7 +33,7 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
     
     - name: Connect to GoDaddy Server
-      run: sftp ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
+      run: sftp ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@emanuelzapata.com
 
     # - name: Connect to GoDaddy Server
     #   run: ftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
