@@ -28,6 +28,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
-      
+
     - name: Upload to GoDaddy
-      run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com | ls
+      run: ftp -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}@ftp.emanuelzapata.com
