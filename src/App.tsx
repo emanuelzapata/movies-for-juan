@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios, { AxiosResponse } from 'axios';
-import MovieContainer from './components/MovieContainer/MovieContainer';
-import recommendations from './assets/recommendations.json';
 import movies from './assets/movies.json';
 import MovieListCard from './components/MovieListCard/MovieListCard';
+import MovieModal from './components/MovieModal/MovieModal';
 
 export default function App() {
+  let modalMovie: any;
+
   function practice(movie:any){
-    console.log(movie);
+    modalMovie = movie;
+    // console.log(movie);
+    //console.log(modalMovie);
   }
 
   return (
@@ -19,6 +22,7 @@ export default function App() {
           <MovieListCard movie={movie} />
         </div>
       ))}
+      <MovieModal movie={modalMovie} />
     </div>
   );
 }
