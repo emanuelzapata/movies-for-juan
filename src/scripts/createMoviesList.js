@@ -3,7 +3,7 @@ const movies = require('../assets/recommendations.json');
 const axios = require('axios');
 
 function createOutputFile(movieOutputList){
-    fileSystem.writeFile('../assets/movies.json',JSON.stringify(movieOutputList), function(error){
+    fileSystem.writeFile('src/assets/movies.json',JSON.stringify(movieOutputList), function(error){
         if(error){
             return console.log(error);
         }
