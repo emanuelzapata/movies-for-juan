@@ -1,14 +1,15 @@
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import movies from './assets/movies.json';
-export default function App() {
-
+import { Button } from '@mui/material';
+import { Modal
+ } from './components/Modal/Modal';
+function App() {
   return (
-    <div className="container">
-      <ul>
-      { movies.map((movie) => 
-        <li>{movie.title}</li>
-      )}
-      </ul>
+    <div className="App">
+      <Modal firstName="emanuel" lastName="zapata" />
     </div>
   );
 }
+
+export default App;
