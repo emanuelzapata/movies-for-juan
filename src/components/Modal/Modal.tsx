@@ -17,25 +17,21 @@ const movie = movies[0];
 // lg, large: 1200px
 // xl, extra-large: 1536px
 export function Modal(props:any){
-    const [open, setOpen] = React.useState(false);
-    const handleClick = () => {
-        setOpen(!open);
-    }
     return(
         <React.Fragment>
-        <Button variant="outlined" onClick={handleClick}>Button click</Button>
-        <Dialog open={open} onClose={handleClick} fullWidth={true} maxWidth={false}>
-            <DialogTitle>{movie.Title} ({movie.Year})</DialogTitle>
+        {/* <Button variant="outlined" onClick={props.handleClick}>Button click</Button> */}
+        <Dialog open={props.open} onClose={props.handleClick} fullWidth={true} maxWidth={false}>
+            <DialogTitle>{props.movie.Title} ({props.movie.Year})</DialogTitle>
             <DialogContent>
                 <DialogContentText>
 
                     <Grid container spacing={0.5}>
                         <Grid xs={12} sm={12} md={6} lg={4} xl={3}>
-                            <img src={movie.Poster}/>
+                            <img src={props.movie.Poster}/>
                         </Grid>
                         <Grid xs={12} sm={8} md={6} lg={6} xl={8}>
-                            <p>{movie.personalNote}</p>
-                            <p>{movie.Plot}</p>                         
+                            <p>{props.movie.personalNote}</p>
+                            <p>{props.movie.Plot}</p>                         
                         </Grid>
                         <Grid xs={12} sm={4} md={12} lg={6} xl={2}>
                             <p>imdbd icon</p>
@@ -44,7 +40,7 @@ export function Modal(props:any){
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClick}>Close</Button>
+                <Button onClick={props.handleClick}>Close</Button>
             </DialogActions>
         </Dialog>
         </React.Fragment>
