@@ -15,20 +15,18 @@ export function Icon(props:any){
     }
     return ( 
         <React.Fragment>
-        <Card onClick={setOpen} sx={{ maxWidth:300 }}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="427"
-                    image={props.movie.Poster}
-                    sx={{ objectFit:"contain" }}
-                />
-                <CardContent>
-                    <h2>{props.movie.Title}</h2>
-                </CardContent>
-            </CardActionArea>
-        </Card>
-        <Modal open={open} handleClick={setOpen} movie={props.movie}/>
+            <Card elevation={12} onClick={setOpen}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        image={props.movie.Poster}
+                    />
+                    <CardContent>
+                        <h2 className='icon-title'>{props.movie.Title}</h2>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+            <Modal open={open} handleClick={setOpen} movie={props.movie}/>
         </React.Fragment>
     )
 }

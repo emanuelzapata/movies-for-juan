@@ -7,9 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Button } from '@mui/material';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import './Modal.css';
-import movies from '../../assets/movies.json';
 
-const movie = movies[0];
 // Breakpoints start from given pixel number
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -34,7 +32,7 @@ export function Modal(props:any){
                             <p>{props.movie.Plot}</p>                         
                         </Grid>
                         <Grid xs={12} sm={4} md={12} lg={6} xl={2}>
-                            <p>imdbd icon</p>
+                            <p>imdbd icon {props.movie.imdbRating}</p>
                         </Grid>
                     </Grid>
                 </DialogContentText>

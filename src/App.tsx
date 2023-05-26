@@ -7,15 +7,10 @@ import Grid from '@mui/material/Grid'; // Grid version 1
 function App() {
   return (
     <React.Fragment>
-      <Grid justifyContent="center" alignItems="center" container>
-        <Grid item>
-          <h1>Movies for Juan</h1>
-        </Grid>
-      </Grid>
-      <Grid justifyContent="center" alignItems="center" container spacing={4} className="App">
+      <Grid container justifyContent="center" spacing={4}>
         {movies.map((movie)=>(
-          <Grid item>
-            <Icon xs={12} movie={movie} />
+          <Grid item xs={6} sm={4} md={3} lg={3} xl={2}>
+            <Icon movie={movie} />
           </Grid>
         ))}
       </Grid>
