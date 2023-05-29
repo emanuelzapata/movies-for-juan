@@ -5,16 +5,9 @@ import { Icon } from './components/Icon/Icon';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import axios from 'axios';
 
-// function getMovieData(){
-//   const response = axios.post("https://movies-for-juan.web.app/getMovies");
-//   return response;
-//   // return axios.post("https://movies-for-juan.web.app/getMovies").then((response)=>{
-//   //   return response.data;
-//   // });
-// }
-
 function App() {
   const [movies, setMovies] = useState([]);
+  
   useEffect(()=>{
     axios.post("https://movies-for-juan.web.app/getMovies").then(async (response)=>{
       setMovies(await response.data);
@@ -22,6 +15,7 @@ function App() {
       console.log(error.response);
     })
   },[])
+
   return (
     <React.Fragment>
       <Grid justifyContent="center" alignItems="center" container>

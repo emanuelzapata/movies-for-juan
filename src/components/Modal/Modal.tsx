@@ -17,6 +17,8 @@ const movie = movies[0];
 // lg, large: 1200px
 // xl, extra-large: 1536px
 export function Modal(props:any){
+    props.movie.Ratings.map((rating:any)=>{
+    })
     return(
         <React.Fragment>
         {/* <Button variant="outlined" onClick={props.handleClick}>Button click</Button> */}
@@ -34,7 +36,11 @@ export function Modal(props:any){
                             <p>{props.movie.Plot}</p>                         
                         </Grid>
                         <Grid xs={12} sm={4} md={12} lg={6} xl={2}>
-                            <p>imdbd icon</p>
+                            {props.movie.Ratings.map((rating:any)=>{                                
+                                return(
+                                    <p>{rating.Source} - {rating.Value}</p>
+                                )
+                            })}
                         </Grid>
                     </Grid>
                 </DialogContentText>
