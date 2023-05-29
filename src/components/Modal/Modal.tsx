@@ -8,6 +8,9 @@ import { Button } from '@mui/material';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import './Modal.css';
 import movies from '../../assets/movies.json';
+import rottenTomatoesLogo from '../../assets/rottentomatoes_logo_40.png';
+import imdbLogo from '../../assets/IMDB_Logo_2016.svg';
+import metacriticLogo from '../../assets/Metacritic_logo.svg.png';
 
 const movie = movies[0];
 // Breakpoints start from given pixel number
@@ -17,8 +20,14 @@ const movie = movies[0];
 // lg, large: 1200px
 // xl, extra-large: 1536px
 export function Modal(props:any){
-    props.movie.Ratings.map((rating:any)=>{
-    })
+    const getRatingLogo = (Source:string) => {
+        if(Source === "Internet Movie Database")
+            return imdbLogo;
+        if(Source === "Rotten Tomatoes")
+            return rottenTomatoesLogo;
+        if(Source === "Metacritic")
+            return metacriticLogo;
+    }
     return(
         <React.Fragment>
         {/* <Button variant="outlined" onClick={props.handleClick}>Button click</Button> */}
@@ -32,13 +41,18 @@ export function Modal(props:any){
                             <img src={props.movie.Poster}/>
                         </Grid>
                         <Grid xs={12} sm={8} md={6} lg={6} xl={8}>
-                            <p>{props.movie.personalNote}</p>
-                            <p>{props.movie.Plot}</p>                         
-                        </Grid>
-                        <Grid xs={12} sm={4} md={12} lg={6} xl={2}>
-                            {props.movie.Ratings.map((rating:any)=>{                                
+                            <h3>Plot</h3>
+                            <p>{props.movie.Plot}</p>
+                            <div className={props.movie.personalNote === '' ? 'hidden':''}>
+                                <h3>Personal Note</h3>
+                                <p>{props.movie.personalNote}</p>
+                            </div>
+                            {props.movie.Ratings.map((rating:any)=>{
                                 return(
-                                    <p>{rating.Source} - {rating.Value}</p>
+                                    <React.Fragment>
+                                        <img className="rating-logo" alt="image" src={getRatingLogo(rating.Source)}/>
+                                        <span>{rating.Value}</span>
+                                    </React.Fragment>
                                 )
                             })}
                         </Grid>

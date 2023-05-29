@@ -1,3 +1,19 @@
 .bodyContent{
     color:red;
 }
+
+.hidden{
+    display:none;
+}
+
+.rating-logo{
+    width:75px;
+}
+
+.ratings-logo-container{
+    display:flex;
+    /* justify-content: center; */
+    align-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
