@@ -9,10 +9,10 @@ function App() {
     <React.Fragment>
       <Grid justifyContent="center" alignItems="center" container>
         <Grid item>
-          <h1>Movies for Juan</h1>
+          <h1 className='main-title'>Movies for Juan</h1>
         </Grid>
       </Grid>
-      <Grid justifyContent="center" alignItems="center" container spacing={4} className="App">
+      <Grid justifyContent="center" alignItems="center" columns={4} container spacing={4} className="App">
         {movies.map((movie)=>(
           <Grid item>
             <Icon xs={12} movie={movie} />

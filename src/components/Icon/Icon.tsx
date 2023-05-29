@@ -23,7 +23,7 @@ export function Icon(props:any){
                     image={props.movie.Poster}
                     sx={{ objectFit:"contain" }}
                 />
-                <CardContent>
+                <CardContent sx={{backgroundColor:"#9DCBBA", color:"#454545"}}>
                     <h2>{props.movie.Title}</h2>
                 </CardContent>
             </CardActionArea>
